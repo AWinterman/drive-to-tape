@@ -1,0 +1,37 @@
+{
+  "name": "drive-to-tape",
+  "version": "0.0.0",
+  "description": "Conver drive-js tests to tape tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AWinterman/drive-to-tape.git"
+  },
+  "keywords": [
+    "drive",
+    "ast",
+    "tape",
+    "tests"
+  ],
+  "author": "Andrew Winterman <andywinterman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AWinterman/drive-to-tape/issues"
+  },
+  "homepage": "https://github.com/AWinterman/drive-to-tape",
+  "dependencies": {
+    "cssauron-falafel": "^1.2.1",
+    "falafel": "^0.3.1",
+    "concat-stream": "^1.4.6",
+    "through": "^2.3.4",
+    "path": "^0.4.9",
+    "escodegen": "^1.3.3",
+    "esprima": "^1.2.2",
+    "jsfmt": "^0.3.1",
+    "concat": "^1.0.0",
+    "duplexer": "^0.1.1"
+  }
+}
