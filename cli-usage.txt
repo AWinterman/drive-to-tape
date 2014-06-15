@@ -1,6 +1,1 @@
-
-drive-to-tape path [path]
-
-  If no second argument is specified, then drive-to-tape prints its output to
-  standard out. Users can also pipe data in.
-
+cat "path/to/tape/test" | drive-to-tape > tape-test.js
