@@ -10,7 +10,7 @@ var args = minimist(process.argv.slice(2))
   , input = process.stdin
 
 if(args.help) {
-  return fs.creatReadStream('./cli-usage.txt').pipe(process.stderr)
+  return fs.createReadStream('./cli-usage.txt').pipe(process.stderr)
 }
 
 if(args._.length > 0) {
