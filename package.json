@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Convert drive-js tests to tape tests",
   "main": "index.js",
+  "bin": {
+    "drive-to-tape": "./cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/AWinterman/drive-to-tape.git"
@@ -29,6 +32,7 @@
     "esprima": "^1.2.2",
     "jsfmt": "^0.3.1",
     "concat": "^1.0.0",
-    "duplexer": "^0.1.1"
+    "duplexer": "^0.1.1",
+    "minimist": "^0.2.0"
   }
 }

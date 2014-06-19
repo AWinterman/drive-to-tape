@@ -1,12 +1,26 @@
-var concat = require('concat')
+#!/usr/bin/env node
+
+var minimist = require('minimist')
+  , concat = require('concat')
   , convert = require('./')
   , fs = require('fs')
 
+var args = minimist(process.argv.slice(2))
+  , output = process.stdout
+  , input = process.stdin
 
-console.error(process.stdin.isTTY, process.stdout.isTTY)
-
-return process.stdin.pipe(convert()).pipe(process.stdout)
-
-if(process.argv.length <= 2) {
-   return fs.createReadStream('cli-usage.txt').pipe(process.stderr)
+if(args.help) {
+  return fs.creatReadStream('./cli-usage.txt').pipe(process.stderr)
 }
+
+if(args._.length > 0) {
+  input = fs.createReadStream(args._[0])
+}
+
+if(args._.length > 1) {
+  input = fs.createWriteStream(args._[1])
+}
+
+input.pipe(convert()).pipe(output)
+
+
