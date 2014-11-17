@@ -141,7 +141,7 @@ function replace_dones(node) {
   if(node.parent.arguments.length) {
     node.update('assert.fail')
   } else {
-    node.update('assert.done')
+    node.update('assert.end')
   }
 }
 
