@@ -33,7 +33,15 @@
     "jsfmt": "^0.3.1",
     "minimist": "^0.2.0",
     "path": "^0.4.9",
+    "scoped": "^2.1.2",
     "tape": "^3.0.3",
     "through": "^2.3.4"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node tests/"
   }
 }
