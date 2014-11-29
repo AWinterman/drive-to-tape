@@ -2,7 +2,13 @@
 
 Turns drive tests into tape tests.
 
-`cat "path/to/tape/test" | drive-to-tape > tape-test.js`
+On the command line:
+
+```
+drive-to-tape --help
+```
+
+
 
 Or require it in a js module:
 

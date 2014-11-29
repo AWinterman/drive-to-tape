@@ -1,1 +1,18 @@
-cat "path/to/tape/test" | drive-to-tape > tape-test.js
+drive-to-tape source target
+
+  source: 
+
+    A file or directory. If a file, converts the specified file to a tape test.
+    If absent, reads from stdin.If a directory, recursively descends the
+    directory, converting each file matching *.test.js to a tape test, which it
+    places in target/*.js, making new directories where necessary. 
+
+  target: 
+
+    A file or directory. If a directory, the results of conversion are placed
+    in the directory. If a filename, the results of conversion are placed in
+    the specified file.
+
+        
+
+
