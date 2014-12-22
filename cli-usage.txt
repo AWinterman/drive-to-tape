@@ -1,18 +1,36 @@
-drive-to-tape source target
+drive-to-tape [-hr --help --replace] [-l|log ./path] [-v|verbosity DEBUG|INFO|WARN|ERROR] [source] [target]
 
   source: 
 
-    A file or directory. If a file, converts the specified file to a tape test.
-    If absent, reads from stdin.If a directory, recursively descends the
-    directory, converting each file matching *.test.js to a tape test, which it
-    places in target/*.js, making new directories where necessary. 
+    A path to a file. Converts the specified file to a tape test.
+    If absent, reads from stdin.
 
   target: 
 
-    A file or directory. If a directory, the results of conversion are placed
-    in the directory. If a filename, the results of conversion are placed in
-    the specified file.
+    A file. The results of conversion are placed in the specified file. If
+    absent, the results are piped to stdout instead.
 
-        
+  -h, --help
 
+    Print this help message and exit.
 
+  -l, --log /path
+
+    A relative (meaning leading with a ./) or absolute path to the files into
+    which logs should be placed.
+    
+  -v, --verbosity "DEBUG|INFO|WARN|ERROR"
+
+    Set the log level to the specified verbosity. Messages of the same or
+    greater severity are printed to the log. Defaults to WARN.
+
+    ERROR: Print errors encountered during parsing
+    WARN:  html or endpoints function encountered in the drive file are
+           recorded to the log
+    INFO:  Progress updates, transformation steps are printed to the log.
+    DEBUG: Same as WARN at current.
+
+  -r, --replace
+
+    Runs the transformation in-place-- the results are written back to the input
+    file rather than output.

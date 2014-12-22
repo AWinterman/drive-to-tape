@@ -4,7 +4,7 @@ suite('a test suite', function() {
   })
 
   test('my asynch unit test', function(done) {
-    setImmediate(guard(run_test, done))
+    setTimeout(guard(run_test, done), 0)
 
     function run_test() {
       assert.strictEqual('yes', 'yes')
@@ -16,7 +16,7 @@ suite('a test suite', function() {
   })
 
   test('ungaurded', function(done) {
-    setImmediate(run_test)
+    setTimeout(run_test, 0)
 
     function run_test() {
       assert.strictEqual('yes', 'yes')
@@ -44,3 +44,12 @@ function guard(fn, done) {
     }
   }
 }
+
+html('./example.html')
+
+endpoints({
+    'api/v2/wutever': function(req, resp) {
+      resp.writeHead(200, 'application/json')
+      resp.end(JSON.stringify)
+    }
+})
