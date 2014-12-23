@@ -13,7 +13,7 @@ var args = minimist(process.argv.slice(2), {'boolean': ['r', 'replace', 'h', 'he
   , output = process.stdout
   , input = process.stdin
   , logStream = process.stderr
-  , level = 'ERROR'
+  , level = 'WARN'
   , namedLogStream = null
 
 if(args.help || args.h) {
@@ -22,7 +22,7 @@ if(args.help || args.h) {
 }
 
 if(args.log || args.l) {
-  logStream = fs.createWriteStream(args.log || args.l)
+  logStream = fs.createWriteStream(args.log || args.l, {'flags': 'a'})
 }
 
 if(args.verbosity || args.v) {
