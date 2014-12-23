@@ -1,6 +1,6 @@
 {
   "name": "drive-to-tape",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Convert drive-js tests to tape tests",
   "main": "index.js",
   "bin": {
